@@ -63,7 +63,6 @@ input::-webkit-input-placeholder{
 
 .comment-field-input input{
   width: 100%;
-  line-height: 36px;
   padding-left: 8px;
 }
 

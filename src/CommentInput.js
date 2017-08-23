@@ -8,27 +8,27 @@ class CommentInput extends Component {
             content: ''
         }
     }
-
-    handlerUserNameChange(event){
+    handlerInputChange(event){
         this.setState({
             username: event.target.value
-        });
+        })
     }
 
     handlerContentChange(event){
         this.setState({
             content: event.target.value
         })
+
     }
 
-    handlerOnSubmit(){
-        if(this.props.onSubmit){
-            const {username,content} = this.state;
-            this.props.onSubmit({username,content})
-        }
-        this.setState({
-            content: ''
-        })
+    handlerSubmit(){
+      if(this.props.onSubmit){
+          const {username,content} = this.state
+          this.props.onSubmit({username,content})
+      }
+      this.setState({
+          content: ""
+      })
     }
 
     render(){
@@ -37,19 +37,19 @@ class CommentInput extends Component {
                 <div className="comment-field">
                     <span className="comment-field-name">用户名：</span>
                     <div className="comment-field-input">
-                        <input value={this.state.username} onChange={this.handlerUserNameChange.bind(this)}/>
+                        <input value={this.state.value} onChange={ this.handlerInputChange.bind(this) }/>
                     </div>
                 </div>
 
                 <div className="comment-field">
                     <span className="comment-field-name">评论内容：</span>
                     <div className="comment-field-input">
-                        <textarea value={this.state.content} onChange={this.handlerContentChange.bind(this)}/>
+                        <textarea value={this.state.content} onChange={ this.handlerContentChange.bind(this) }/>
                     </div>
                 </div>
 
                 <div className="comment-field-button">
-                    <button onClick={this.handlerOnSubmit.bind(this)}>发布</button>
+                    <button onClick={ this.handlerSubmit.bind(this) }>发布</button>
                 </div>
             </div>
         )

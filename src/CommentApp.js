@@ -5,11 +5,10 @@ import CommentList from './CommentList'
 class CommentApp extends Component {
     constructor(){
         super()
-        this.state={
+        this.state = {
             comments: []
         }
     }
-
     handlerSubmitComment(comment){
         console.log(comment)
         this.state.comments.push(comment)
